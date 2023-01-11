@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a2rt+s)(p_3fc2lj*_5po*q(n6c4^!tvql#__cs)trx&r+%9*1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'employee'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'stellentis.middleware.StellentisMiddleWare'
 ]
 
 ROOT_URLCONF = 'stellentis.urls'
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'stellentis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +80,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'credo_sample',
+    #     'USER': 'credo_admin',
+    #     'PASSWORD': 'Credo@123',
+    #     'HOST': 'db4free.net'
+    # }
 }
 
 
