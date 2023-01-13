@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http.response import HttpResponse
-from employee.views import sample
+from employee.views import sample, EmployeeView
 # def home(request):
 #     return HttpResponse("Welcome to Credo")
 
 urlpatterns = [
     path('sample/', sample),
     path('admin/', admin.site.urls),
+    path('employee/', EmployeeView.as_view())
 ]
