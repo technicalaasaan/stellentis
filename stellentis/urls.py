@@ -21,7 +21,7 @@ from employee.views import sample, EmployeeView
 #     return HttpResponse("Welcome to Credo")
 
 urlpatterns = [
-    path('sample/', sample),
+    path('sample/', sample, name='table'),
     path('admin/', admin.site.urls),
     path('employee/', EmployeeView.as_view())
 ]
