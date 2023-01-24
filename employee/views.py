@@ -42,3 +42,24 @@ class EmployeeView(CreateView): #
     template_name = 'employee/test.html'
     success_url = '/sample'
     # fields = '__all__'
+
+# drf -> django rest framework
+# POST
+# GET
+# PATCH
+# PUT
+# DELETE
+# OPTION
+
+
+"""
+Front end <->  BACKEND <-> DATABASE
+HTML/JS/CSS    PYTHON      MYSQL
+               FRAMEWORK
+               
+single URL to run both baclend & frontend   RENDERING
+               
+               
+Rendering <---- API
+Django Front API Django Backend 
+"""
