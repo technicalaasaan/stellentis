@@ -16,17 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http.response import HttpResponse
-from employee.views import sample, EmployeeView
+from employee.views import sample, EmployeeView, mailer, login_page, logout_page, register_page
 from employee.urls import emp_url
+from django.conf import settings
+from django.conf.urls.static import static
+
 # def home(request):
 #     return HttpResponse("Welcome to Credo")
 
 urlpatterns = [
     path('sample/', sample, name='table'),
     path('admin/', admin.site.urls),
-    path('employee/', EmployeeView.as_view())
+    path('employee/', EmployeeView.as_view()),
+    path('mail/', mailer),
+    path('register/', register_page, name="register"),
+    path('login/', login_page, name="login"),
+    path('logout/', logout_page, name="logout"),
 ]
 
 urlpatterns += [
     path('api/', include(emp_url.urls))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

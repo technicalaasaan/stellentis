@@ -9,6 +9,7 @@ class Employee(models.Model):
         ('BE', 'Bacholor of Engineering'), ('BA', 'Bachelor of Arts'), ('BSc', 'Bachelor of Science'), ('Others', 'Others')
     ), null=False, default='Others')
     address = models.TextField(null=False)
+    profile_pic = models.ImageField(upload_to='profile_pic/')
 
     class Meta:
         db_table = 'employee'

@@ -7,6 +7,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Qualification</th>
@@ -17,6 +18,7 @@
       {% if data %}
       {% for r in data %}
       <tr>
+        <td><img src="{{ r.profile_pic.url }}" width="30" height="30" /></td>
         <td>{{ r.first_name }}</td>
         <td>{{ r.last_name }}</td>
         <td>{{ r.qualification }}</td>
